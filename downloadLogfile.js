@@ -17,6 +17,7 @@ main = async () => {
         console.log('Waiting for file to be downloaded...');
         await delay(10000);
         require('./functions/logFIleToConsole')(pathToFile);
+        console.log('Find the actual file in: '+pathToFile);
         console.log('Done.');
 
     } catch(err) {
