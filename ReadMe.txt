@@ -42,7 +42,8 @@ In the rootfolder of this project create a file called 'credentials.json' and co
     "pgAdminPass": "yourPgAdminPass"
 }
 
-yourMendixApiKey = you can create one via these steps: https://docs.mendix.com/developerportal/mendix-profile/#api-key
+yourMendixApiKey = you can create one via these steps: https://docs.mendix.com/developerportal/mendix-profile/#api-key 
+Please note that you have to check the checkbox for api rights on the security/nodepermissions page of your app in the sprintr environment. 
 [IP-localhost] = most of the time 127.0.0.1, but you can find this number by launching pgAdmin in the webbrowser and clicking on the url.
 [port] = launch pgAdmin in the webbrowser, click on the url. Some numbers will appear in the url on the place where [port] stands in the example above. 
 [key] = launch pgAdmin, enter password. Then go to cookies in your browser for this page. Copy the value for PGADMIN_INT_KEY
