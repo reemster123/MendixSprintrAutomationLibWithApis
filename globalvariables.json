@@ -1,0 +1,15 @@
+{
+    "build_url": "https://deploy.mendix.com/api/1/apps/",
+    "backups_url": " https://deploy.mendix.com/api/v2/apps/",
+    "char_to_replace": ",",
+    "myappsUrl": "https://sprintr.home.mendix.com/link/myapps",
+    "pgRoleName": "postgres",
+    "longProcesTimeout": 900000, 
+    "standardDelayAfterFunction": 2000,
+    "standardDelayAfterPageLoad": 5000,
+    "standardTimeOutWFS": 60000, 
+    "extendedTimeOutWFS": 300000,
+    "showProcesInBrowser": true
+    
+}
+
