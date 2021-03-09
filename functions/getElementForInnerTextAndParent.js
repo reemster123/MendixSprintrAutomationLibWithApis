@@ -1,9 +1,9 @@
 module.exports = async (innertext, tagname, parent, page) => {
     const element = await page.evaluateHandle((name, tag, parent) => {
-        let elements = parent.getElementsByTagName(tag);
-        elements = Array.from(elements);
-        elements.map(el => console.log(el.innerText));
-        el = elements.find(element => {
+        const elements = parent.getElementsByTagName(tag);
+        const elementsArr = Array.from(elements);
+        elementsArr.map(el => console.log(el.innerText));
+        el = elementsArr.find(element => {
             if (element !== null){
                 console.log(element);
                 return element.innerText.toLowerCase().includes(name);
