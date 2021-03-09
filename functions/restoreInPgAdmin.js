@@ -4,7 +4,6 @@ const cred = require('../credentials.json');
 //import libraries
 const puppeteer = require('puppeteer');
 //import functions
-const getElementForInnerText = require('./getElementForInnerText');
 const getElementForInnerTextAndParent = require('./getElementForInnerTextAndParent');
 const shutdown = require('./shutdown');
 const exitWithMessage = require('./exitWithMessage');
@@ -65,7 +64,7 @@ module.exports = async (cmdArguments, filePath) => {
         await delay(gv.standardDelayAfterFunction);
 
         // this objectMenuItem can also be retrieved by id= mnu_obj
-        const objectMenuItem = await getElementForInnerText('object ', 'a', page);
+        const objectMenuItem = await page.waitForSelector('#mnu_obj');
         await objectMenuItem.click();
         await delay(gv.standardDelayAfterFunction);
         const parentOfObjectMenuItem = await page.evaluateHandle((menuItem)=> menuItem.parentElement, objectMenuItem);
