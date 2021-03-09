@@ -5,7 +5,7 @@ const delay = require('./delay');
 const exitWithMessage = require('./exitWithMessage');
 
 module.exports = async(cmdArguments, app) => {
-    const url = gv.build_url+app.AppId+'/packages/';
+    const url = gv.build_url+app.AppId+'/packages';
     const packageId = await postPackage(cmdArguments, url);
     await waitForBuildSucces(url, packageId);
     return packageId;
@@ -44,7 +44,7 @@ waitForBuildSucces = async(url, packageId) => {
         do {
             await delay(10000);
             console.log('checking status...')
-            const {body} = await got.get(url+packageId, { 
+            const {body} = await got.get(url+'/'+packageId, { 
                 headers: {
                     "Mendix-Username": cred.mendix_username,
                     "Mendix-ApiKey": cred.api_key,
