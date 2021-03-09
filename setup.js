@@ -14,7 +14,10 @@ main = async () => {
 
 getApps = async () => {
     console.log('getting apps and setting them to apps.json...');
-    const response = await got(gv.build_url,{
+    // remove the end backslash from url (workaround).
+    let url = gv.build_url;
+    url = url.substring(0, url.length-1);
+    const response = await got(url,{
         method: 'GET',
         headers: {
             'Content-Type':'application/json', 
