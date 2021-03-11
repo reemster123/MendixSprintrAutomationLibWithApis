@@ -4,15 +4,15 @@ const got = require('got');
 const delay = require('./delay');
 const exitWithMessage = require('./exitWithMessage');
 
-module.exports = async(cmdArguments, app) => {
+module.exports = async(cmdArguments, revision, app) => {
     const url = gv.build_url+app.AppId+'/packages';
-    const packageId = await postPackage(cmdArguments, url);
+    const packageId = await postPackage(cmdArguments, revision, url);
     await waitForBuildSucces(url, packageId);
     return packageId;
 }
 
 // post a call to start a proces on the mendix server to build a deployment package. 
-postPackage = async(cmdArguments, url) => {
+postPackage = async(cmdArguments, revision, url) => {
     try {
         console.log('url: '+url); 
         const branch = generateBranchPath(cmdArguments.branch);
@@ -24,7 +24,7 @@ postPackage = async(cmdArguments, url) => {
             },
             json: {
                 "Branch" : branch,
-                "Revision" :  cmdArguments.revision ,
+                "Revision" :  revision ,
                 "Version" :  "1.0.2" ,
                 "Description" :  "by automation api"
             }
