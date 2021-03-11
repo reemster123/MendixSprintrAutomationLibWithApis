@@ -7,7 +7,7 @@ const exitWithMessage = require('./exitWithMessage');
 module.exports = async(AppId, envName) => {
     try {
         console.log('Starting getEnvId...');
-        const response = await got(gv.build_url+AppId+'/environments/', {
+        const response = await got(gv.build_url+AppId+'/environments', {
             headers: {
                 "Content-Type": "application/json",
                 "Mendix-Username": cred.mendix_username,
