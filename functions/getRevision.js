@@ -15,7 +15,6 @@ module.exports = async(appId, brancheName) => {
             }
         });
         const branches = JSON.parse(response.body);
-        console.log('brancheName: '+brancheName);
         const branche = branches.find(obj => obj.DisplayName.toLowerCase() === brancheName.toLowerCase());
         console.log('Latest revision number: '+branche.LatestRevisionNumber);
         return branche.LatestRevisionNumber;
