@@ -17,6 +17,7 @@ getApps = async () => {
     // remove the end backslash from url (workaround).
     let url = gv.build_url;
     url = url.substring(0, url.length-1);
+    console.log(url);
     const response = await got(url,{
         method: 'GET',
         headers: {
@@ -31,9 +32,6 @@ getApps = async () => {
 
 
 } 
-
-
-
 
 
 
