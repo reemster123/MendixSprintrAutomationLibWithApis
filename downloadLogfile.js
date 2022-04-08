@@ -9,7 +9,7 @@ const cmdArguments =  {
 
 main = async () => {
     try {
-        
+
         const app = await require('./functions/retrieveApp')(cmdArguments.appName);
         const logfileInfo = await require('./functions/getLogfileInfo')(cmdArguments, app);
         const downloadType = await require('./enums/downloadType.json');
