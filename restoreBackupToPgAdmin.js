@@ -46,7 +46,6 @@ returnSnapshotId = (date, backupArr) => {
     } catch (err) {
         exitWithMessage(err, 'Error in returnSnapshotId')
     }
- 
 }
 
 
